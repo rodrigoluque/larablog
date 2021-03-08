@@ -16,6 +16,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     //Middleware usamoas el metodo except para dejar publico esas rutas.
+     public function __construct(){
+         $this->middleware(['auth','rol.admin']);
+     }
+
     public function index()
     {   
        //obtenemos registros del modelo Posts 
